@@ -1,0 +1,7 @@
+{"namespace": "com.harmeetsingh13.java.producers.avroserializer",
+    "type": "record",
+    "name": "CustomerGeneric",
+    "fields": [{"name": "id","type": "int"},
+            {"name": "name","type": "string"},
+            {"name": "salary","type": "double"}]
+}
