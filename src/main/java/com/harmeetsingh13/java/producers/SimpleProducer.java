@@ -38,11 +38,11 @@ public class SimpleProducer {
 
     public static void main(String[] args) throws InterruptedException {
         ProducerRecord<String, String> record1 = new ProducerRecord<>("CustomerCountry",
-        "Record 1", "Japan"
+        "Record 1", "Japan1"
         );
 
         ProducerRecord<String, String> record2 = new ProducerRecord<>("CustomerCountry",
-                "Record 2", "Punjab"
+                "Record 2", "Punjab1"
         );
 
         fireAndForget(record1);

@@ -1,5 +1,6 @@
 package com.harmeetsingh13.java.producers.avroserializer;
 
+import com.harmeetsingh13.java.avroserializer.Customer;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import org.apache.avro.Schema;
 import org.apache.avro.Schema.Parser;
@@ -46,7 +47,8 @@ public class AvroSpecificProducer {
         Customer customer1 = new Customer(1002, "Jimmy");
 
         Parser parser = new Parser();
-        Schema schema = parser.parse(AvroSpecificProducer.class.getClassLoader().getResourceAsStream("avro/customer.avsc"));
+        Schema schema = parser.parse(AvroSpecificProducer.class
+                .getClassLoader().getResourceAsStream("avro/customer.avsc"));
 
         SpecificDatumWriter<Customer> writer = new SpecificDatumWriter<>(schema);
         try(ByteArrayOutputStream os = new ByteArrayOutputStream()) {
@@ -56,8 +58,8 @@ public class AvroSpecificProducer {
 
             byte[] avroBytes = os.toByteArray();
 
-            ProducerRecord<String, byte[]> record1 = new ProducerRecord<>("CustomerCountry",
-                    "Customer One", avroBytes
+            ProducerRecord<String, byte[]> record1 = new ProducerRecord<>("CustomerSpecificCountry",
+                    "Customer One 11 ", avroBytes
             );
 
             asyncSend(record1);
