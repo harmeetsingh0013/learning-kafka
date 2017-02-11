@@ -1,6 +1,6 @@
 package com.harmeetsingh13.java.producers.avroserializer;
 
-import com.harmeetsingh13.java.avroserializer.Customer;
+import com.harmeetsingh13.java.Customer;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import org.apache.avro.Schema;
 import org.apache.avro.Schema.Parser;

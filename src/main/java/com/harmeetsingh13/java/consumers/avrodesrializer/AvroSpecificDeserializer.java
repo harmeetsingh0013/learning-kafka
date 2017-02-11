@@ -1,6 +1,5 @@
 package com.harmeetsingh13.java.consumers.avrodesrializer;
 
-import com.harmeetsingh13.java.avroserializer.Customer;
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericRecord;
@@ -11,7 +10,6 @@ import org.apache.avro.specific.SpecificDatumReader;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.common.serialization.StringDeserializer;
 
 import java.io.IOException;
 import java.util.Arrays;

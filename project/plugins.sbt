@@ -1,3 +1,3 @@
 logLevel := Level.Warn
 
-addSbtPlugin("com.cavorite" % "sbt-avro-1-7" % "1.1.2")
+//addSbtPlugin("com.cavorite" % "sbt-avro-1-7" % "1.1.2")
