@@ -1,4 +1,4 @@
-{"namespace": "com.harmeetsingh13.java.producers",
+{"namespace": "com.harmeetsingh13.java",
     "type": "record",
     "name": "CustomerGeneric",
     "fields": [{"name": "id","type": "int"},

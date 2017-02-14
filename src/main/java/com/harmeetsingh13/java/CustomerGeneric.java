@@ -6,25 +6,27 @@
 package com.harmeetsingh13.java;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
-public class Customer extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Customer\",\"namespace\":\"com.harmeetsingh13.java\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"name\",\"type\":\"string\"}]}");
+public class CustomerGeneric extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CustomerGeneric\",\"namespace\":\"com.harmeetsingh13.java\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"salary\",\"type\":\"double\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public int id;
   @Deprecated public java.lang.CharSequence name;
+  @Deprecated public double salary;
 
   /**
    * Default constructor.  Note that this does not initialize fields
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>. 
    */
-  public Customer() {}
+  public CustomerGeneric() {}
 
   /**
    * All-args constructor.
    */
-  public Customer(java.lang.Integer id, java.lang.CharSequence name) {
+  public CustomerGeneric(java.lang.Integer id, java.lang.CharSequence name, java.lang.Double salary) {
     this.id = id;
     this.name = name;
+    this.salary = salary;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -33,6 +35,7 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
     switch (field$) {
     case 0: return id;
     case 1: return name;
+    case 2: return salary;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -42,6 +45,7 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
     switch (field$) {
     case 0: id = (java.lang.Integer)value$; break;
     case 1: name = (java.lang.CharSequence)value$; break;
+    case 2: salary = (java.lang.Double)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -76,37 +80,53 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
     this.name = value;
   }
 
-  /** Creates a new Customer RecordBuilder */
-  public static com.harmeetsingh13.java.Customer.Builder newBuilder() {
-    return new com.harmeetsingh13.java.Customer.Builder();
+  /**
+   * Gets the value of the 'salary' field.
+   */
+  public java.lang.Double getSalary() {
+    return salary;
+  }
+
+  /**
+   * Sets the value of the 'salary' field.
+   * @param value the value to set.
+   */
+  public void setSalary(java.lang.Double value) {
+    this.salary = value;
+  }
+
+  /** Creates a new CustomerGeneric RecordBuilder */
+  public static com.harmeetsingh13.java.CustomerGeneric.Builder newBuilder() {
+    return new com.harmeetsingh13.java.CustomerGeneric.Builder();
   }
   
-  /** Creates a new Customer RecordBuilder by copying an existing Builder */
-  public static com.harmeetsingh13.java.Customer.Builder newBuilder(com.harmeetsingh13.java.Customer.Builder other) {
-    return new com.harmeetsingh13.java.Customer.Builder(other);
+  /** Creates a new CustomerGeneric RecordBuilder by copying an existing Builder */
+  public static com.harmeetsingh13.java.CustomerGeneric.Builder newBuilder(com.harmeetsingh13.java.CustomerGeneric.Builder other) {
+    return new com.harmeetsingh13.java.CustomerGeneric.Builder(other);
   }
   
-  /** Creates a new Customer RecordBuilder by copying an existing Customer instance */
-  public static com.harmeetsingh13.java.Customer.Builder newBuilder(com.harmeetsingh13.java.Customer other) {
-    return new com.harmeetsingh13.java.Customer.Builder(other);
+  /** Creates a new CustomerGeneric RecordBuilder by copying an existing CustomerGeneric instance */
+  public static com.harmeetsingh13.java.CustomerGeneric.Builder newBuilder(com.harmeetsingh13.java.CustomerGeneric other) {
+    return new com.harmeetsingh13.java.CustomerGeneric.Builder(other);
   }
   
   /**
-   * RecordBuilder for Customer instances.
+   * RecordBuilder for CustomerGeneric instances.
    */
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Customer>
-    implements org.apache.avro.data.RecordBuilder<Customer> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<CustomerGeneric>
+    implements org.apache.avro.data.RecordBuilder<CustomerGeneric> {
 
     private int id;
     private java.lang.CharSequence name;
+    private double salary;
 
     /** Creates a new Builder */
     private Builder() {
-      super(com.harmeetsingh13.java.Customer.SCHEMA$);
+      super(com.harmeetsingh13.java.CustomerGeneric.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(com.harmeetsingh13.java.Customer.Builder other) {
+    private Builder(com.harmeetsingh13.java.CustomerGeneric.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -116,11 +136,15 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
         this.name = data().deepCopy(fields()[1].schema(), other.name);
         fieldSetFlags()[1] = true;
       }
+      if (isValidValue(fields()[2], other.salary)) {
+        this.salary = data().deepCopy(fields()[2].schema(), other.salary);
+        fieldSetFlags()[2] = true;
+      }
     }
     
-    /** Creates a Builder by copying an existing Customer instance */
-    private Builder(com.harmeetsingh13.java.Customer other) {
-            super(com.harmeetsingh13.java.Customer.SCHEMA$);
+    /** Creates a Builder by copying an existing CustomerGeneric instance */
+    private Builder(com.harmeetsingh13.java.CustomerGeneric other) {
+            super(com.harmeetsingh13.java.CustomerGeneric.SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
         fieldSetFlags()[0] = true;
@@ -128,6 +152,10 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
       if (isValidValue(fields()[1], other.name)) {
         this.name = data().deepCopy(fields()[1].schema(), other.name);
         fieldSetFlags()[1] = true;
+      }
+      if (isValidValue(fields()[2], other.salary)) {
+        this.salary = data().deepCopy(fields()[2].schema(), other.salary);
+        fieldSetFlags()[2] = true;
       }
     }
 
@@ -137,7 +165,7 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
     }
     
     /** Sets the value of the 'id' field */
-    public com.harmeetsingh13.java.Customer.Builder setId(int value) {
+    public com.harmeetsingh13.java.CustomerGeneric.Builder setId(int value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -150,7 +178,7 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
     }
     
     /** Clears the value of the 'id' field */
-    public com.harmeetsingh13.java.Customer.Builder clearId() {
+    public com.harmeetsingh13.java.CustomerGeneric.Builder clearId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -161,7 +189,7 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
     }
     
     /** Sets the value of the 'name' field */
-    public com.harmeetsingh13.java.Customer.Builder setName(java.lang.CharSequence value) {
+    public com.harmeetsingh13.java.CustomerGeneric.Builder setName(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.name = value;
       fieldSetFlags()[1] = true;
@@ -174,18 +202,43 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
     }
     
     /** Clears the value of the 'name' field */
-    public com.harmeetsingh13.java.Customer.Builder clearName() {
+    public com.harmeetsingh13.java.CustomerGeneric.Builder clearName() {
       name = null;
       fieldSetFlags()[1] = false;
       return this;
     }
 
+    /** Gets the value of the 'salary' field */
+    public java.lang.Double getSalary() {
+      return salary;
+    }
+    
+    /** Sets the value of the 'salary' field */
+    public com.harmeetsingh13.java.CustomerGeneric.Builder setSalary(double value) {
+      validate(fields()[2], value);
+      this.salary = value;
+      fieldSetFlags()[2] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'salary' field has been set */
+    public boolean hasSalary() {
+      return fieldSetFlags()[2];
+    }
+    
+    /** Clears the value of the 'salary' field */
+    public com.harmeetsingh13.java.CustomerGeneric.Builder clearSalary() {
+      fieldSetFlags()[2] = false;
+      return this;
+    }
+
     @Override
-    public Customer build() {
+    public CustomerGeneric build() {
       try {
-        Customer record = new Customer();
+        CustomerGeneric record = new CustomerGeneric();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.Integer) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.salary = fieldSetFlags()[2] ? this.salary : (java.lang.Double) defaultValue(fields()[2]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

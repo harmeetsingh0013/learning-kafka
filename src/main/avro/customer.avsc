@@ -1,4 +1,4 @@
-{"namespace": "com.harmeetsingh13.java.avroserializer",
+{"namespace": "com.harmeetsingh13.java",
     "type": "record",
     "name": "Customer",
     "fields": [{"name": "id","type": "int"},
